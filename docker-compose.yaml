@@ -1,0 +1,12 @@
+version: '3'
+services:
+  php:
+    user: $UID:$GID
+    build:
+      context: ./docker/php
+      dockerfile: Dockerfile
+      args:
+        USER: ${USER}
+        USER_ID: ${UID}
+    volumes:
+      - .:/var/www/html
